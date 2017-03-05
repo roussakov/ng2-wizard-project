@@ -1,0 +1,20 @@
+h1.host-title {
+    text-align: center;
+}
+
+.wizard-container {
+    width:800px;
+    background: #faf9ff;
+    display: block;
+    margin: 0 auto;
+    border: solid 1px #e8e8e8;
+    padding: 10px;
+}
+
+.wizard-step p {
+    text-align: justify;
+}
+
+nav {
+    text-align: right;
+}

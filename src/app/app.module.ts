@@ -5,10 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DemoHostComponent } from './demo-host/demo-host.component';
+import { DemoFormComponent } from './demo-host/demo-form/demo-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoHostComponent,
+    DemoFormComponent
   ],
   imports: [
     BrowserModule,

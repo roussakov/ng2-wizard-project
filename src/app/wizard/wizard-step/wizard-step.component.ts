@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'wizard-step',
@@ -9,14 +9,9 @@ import { Component, OnInit} from '@angular/core';
   `,
   styles: []
 })
-export class WizardStepComponent implements OnInit {
+export class WizardStepComponent {
 
   private _active: Boolean = false;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   get active(): Boolean {
     return this._active;
