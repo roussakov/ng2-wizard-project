@@ -4,6 +4,7 @@ h1.host-title {
 
 .wizard-container {
     width:800px;
+    min-height: 300px;
     background: #faf9ff;
     display: block;
     margin: 0 auto;

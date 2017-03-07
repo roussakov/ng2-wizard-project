@@ -2,8 +2,11 @@
   DEMO HOST/СONTAINER COMPONENT
 </h1>
 
+<!--wizard.breadcrumbs shoudl be observables-->
+<app-demo-breadcrumbs></app-demo-breadcrumbs>
+
 <wizard class="wizard-container">
-  <wizard-step class="wizard-step">
+  <wizard-step class="wizard-step" [title]="'First step title'">
     <h2>First Step</h2>
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -14,7 +17,7 @@
     </nav>
   </wizard-step>
 
-  <wizard-step>
+  <wizard-step [title]="'Second step title'">
     <h2>Second Step</h2>
     <app-demo-form></app-demo-form>
     <nav>
@@ -23,7 +26,7 @@
     </nav>
   </wizard-step>
 
-  <wizard-step>
+  <wizard-step [title]="'Last step title'">
     <h2>Third Step</h2>
     <h3>Last Step in wizard, please go back</h3>
     <nav>

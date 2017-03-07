@@ -1,0 +1,18 @@
+ul {
+    text-align: center;
+    padding:0;
+    margin:0;
+}
+li {
+    display:inline-block;
+    width: 150px;
+    height:20px;
+    background:#FFF;
+    padding: 15px;
+    margin: 5px;
+    border: solid 1px #e8e8e8;
+}
+li.current {
+    background: #faf9ff;
+    border: solid 1px #868585;
+}

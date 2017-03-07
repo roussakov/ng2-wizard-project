@@ -7,12 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DemoHostComponent } from './demo-host/demo-host.component';
 import { DemoFormComponent } from './demo-host/demo-form/demo-form.component';
+import { DemoBreadcrumbsComponent } from './demo-host/demo-breadcrumbs/demo-breadcrumbs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoHostComponent,
-    DemoFormComponent
+    DemoFormComponent,
+    DemoBreadcrumbsComponent
   ],
   imports: [
     BrowserModule,

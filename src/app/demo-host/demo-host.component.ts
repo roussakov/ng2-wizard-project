@@ -1,3 +1,4 @@
+import { BreadcrumbsService } from './../wizard/breadcrumbs.service';
 import { DemoFormComponent } from './demo-form/demo-form.component';
 import { WizardNavigationService } from './../wizard/wizard-navigation.service';
 import { WizardStepComponent } from './../wizard/wizard-step/wizard-step.component';
@@ -12,6 +13,7 @@ import { Component } from '@angular/core';
     WizardComponent, 
     WizardStepComponent, 
     WizardNavigationService,
+    BreadcrumbsService,
     DemoFormComponent]
 })
 export class DemoHostComponent {

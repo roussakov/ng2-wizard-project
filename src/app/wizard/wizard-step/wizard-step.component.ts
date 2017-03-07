@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'wizard-step',
@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
 })
 export class WizardStepComponent {
 
+  @Input() title:string;
   private _active: Boolean = false;
 
   get active(): Boolean {
@@ -20,4 +21,5 @@ export class WizardStepComponent {
   public toggle(): void {
     this._active = !this._active;
   }
+
 }
