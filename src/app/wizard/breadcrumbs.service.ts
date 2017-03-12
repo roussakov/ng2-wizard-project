@@ -5,12 +5,12 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class BreadcrumbsService {
 
-  private _breacrumbs: Subject<Breadcrumbs[]> = new Subject<Breadcrumbs[]>();
+  private _breadcrumbs: Subject<Breadcrumbs[]> = new Subject<Breadcrumbs[]>();
 
   constructor() { }
 
   get breadcrumbs() {
-    return this._breacrumbs;
+    return this._breadcrumbs;
   }
 
 }
