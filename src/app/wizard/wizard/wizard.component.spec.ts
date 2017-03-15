@@ -1,3 +1,4 @@
+import { WizardNavigationService } from './../wizard-navigation.service';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -11,18 +12,21 @@ describe('WizardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WizardComponent ]
+      declarations: [ WizardComponent ],
+      providers: [WizardNavigationService]
     })
     .compileComponents();
+
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WizardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    // fixture.detectChanges();
   });
 
   it('should create', () => {
+    console.log(component);
     expect(component).toBeTruthy();
   });
 });
