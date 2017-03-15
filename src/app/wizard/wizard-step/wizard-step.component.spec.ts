@@ -7,9 +7,7 @@ import { WizardStepComponent } from './wizard-step.component';
 @Component({
   template: `
   <wizard-step #wizardStep [title]="testTitle">
-    <div id="test-content">
-      Transcluded
-    </div>
+    <div id="test-content">Transcluded</div>
   </wizard-step>
   `
 })
@@ -18,7 +16,7 @@ class TestHostComponent {
   @ViewChild('wizardStep') wizardStep;
 }
 
-fdescribe('WizardStepComponent', () => {
+describe('WizardStepComponent', () => {
   let testHostComponent: TestHostComponent;
   let testHostFixture: ComponentFixture<TestHostComponent>;
   let component: WizardStepComponent;
@@ -60,7 +58,7 @@ fdescribe('WizardStepComponent', () => {
     testHostFixture.detectChanges();
 
     const stepTranscludedContent = testHostFixture.debugElement.query(By.css("#test-content"));
-    expect(stepTranscludedContent).toContain("Transcluded");
+    expect(stepTranscludedContent.nativeElement.innerHTML).toContain("Transcluded");
   });
 
   it('should have title', () => {
