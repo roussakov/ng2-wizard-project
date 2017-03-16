@@ -12,50 +12,37 @@ class TestCustomAction implements WizardAction {
 
 fdescribe('WizardNavigationService', () => {
   let service;
-  let serviceObservable;
+  let serviceSubject;
 
   beforeEach(() => {
     service = new WizardNavigationService;
-    serviceObservable = service.actions;
+    serviceSubject = service.actions;
+
+    spyOn(serviceSubject, "next");
   });
 
   it('next action should emit NextAction instance to observer', () => {
-    serviceObservable.subscribe(action => {
-      expect(action).toEqual(jasmine.any(NextAction));
-    });
-
     service.next();
+    expect(serviceSubject.next).toHaveBeenCalledWith(jasmine.any(NextAction));
   });
 
   it('back action should emit BackAction instance to observer', () => {
-    serviceObservable.subscribe(action => {
-      expect(action).toEqual(jasmine.any(BackAction));
-    });
-
     service.back();
+    expect(serviceSubject.next).toHaveBeenCalledWith(jasmine.any(BackAction));
   });
 
   it('first action should emit FirstAction instance to observer', () => {
-    serviceObservable.subscribe(action => {
-      expect(action).toEqual(jasmine.any(FirstAction));
-    });
-
     service.first();
+    expect(serviceSubject.next).toHaveBeenCalledWith(jasmine.any(FirstAction));
   });
 
   it('last action should emit LastAction instance to observer', () => {
-    serviceObservable.subscribe(action => {
-      expect(action).toEqual(jasmine.any(LastAction));
-    });
-
     service.last();
+    expect(serviceSubject.next).toHaveBeenCalledWith(jasmine.any(LastAction));
   });
 
   it('custom action should emit TestCustomAction instance to observer', () => {
-    serviceObservable.subscribe(action => {
-      expect(action).toEqual(jasmine.any(TestCustomAction));
-    });
-
     service.custom(new TestCustomAction);
+    expect(serviceSubject.next).toHaveBeenCalledWith(jasmine.any(TestCustomAction));
   });
 });
