@@ -1,8 +1,7 @@
 import { BreadcrumbsService } from './../breadcrumbs.service';
 import { WizardNavigationService } from './../wizard-navigation.service';
 import { WizardStepComponent } from './../wizard-step/wizard-step.component';
-import { Component, AfterContentInit, ContentChildren, QueryList, OnInit, ChangeDetectorRef, Optional } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Component, AfterContentInit, ContentChildren, QueryList, OnInit, Optional } from '@angular/core';
 import { Breadcrumbs } from './../breadcrumbs';
 
 @Component({
@@ -22,11 +21,8 @@ export class WizardComponent implements AfterContentInit, OnInit {
     this.wizardNavigationService.actions.subscribe((action) => {
         action.execute(this.wizardStepComponents);
 
-        const breadcrumbs = this.wizardStepComponents.map(step => {
-          return new Breadcrumbs(step.title, step.active);
-        });
-
         if(this.breadcrumbsService !== null) {
+          const breadcrumbs = this.wizardStepComponents.map(step => new Breadcrumbs(step.title, step.active));
           this.breadcrumbsService.breadcrumbs.next(breadcrumbs);
         }
     });
