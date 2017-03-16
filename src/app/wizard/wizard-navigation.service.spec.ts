@@ -5,12 +5,13 @@ import { FirstAction } from './actions/first-action';
 import { BackAction } from './actions/back-action';
 import { NextAction } from './actions/next-action';
 import { WizardNavigationService } from './wizard-navigation.service';
+import {Subject} from "rxjs";
 
 class TestCustomAction implements WizardAction {
   execute() {}
 }
 
-fdescribe('WizardNavigationService', () => {
+describe('WizardNavigationService', () => {
   let service;
   let serviceSubject;
 
@@ -45,4 +46,5 @@ fdescribe('WizardNavigationService', () => {
     service.custom(new TestCustomAction);
     expect(serviceSubject.next).toHaveBeenCalledWith(jasmine.any(TestCustomAction));
   });
+
 });

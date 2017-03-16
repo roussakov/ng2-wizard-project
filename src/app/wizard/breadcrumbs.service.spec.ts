@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
 import { BreadcrumbsService } from './breadcrumbs.service';
+import {Subject} from "rxjs";
 
 describe('BreadcrumbsService', () => {
+  let breadcrumbsService;
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [BreadcrumbsService]
-    });
+    breadcrumbsService = new BreadcrumbsService();
   });
 
-  it('should ...', inject([BreadcrumbsService], (service: BreadcrumbsService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('get breadcrumbs should return Subject instance', () => {
+    expect(breadcrumbsService.breadcrumbs).toEqual(jasmine.any(Subject));
+  });
 });
