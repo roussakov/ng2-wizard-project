@@ -3,6 +3,7 @@ import { WizardNavigationService } from './../wizard-navigation.service';
 import { WizardStepComponent } from './../wizard-step/wizard-step.component';
 import { Component, AfterContentInit, ContentChildren, QueryList, OnInit, Optional } from '@angular/core';
 import { Breadcrumbs } from './../breadcrumbs';
+import {WizardAction} from "../actions/wizard-action";
 
 @Component({
   selector: 'wizard',
@@ -18,7 +19,7 @@ export class WizardComponent implements AfterContentInit, OnInit {
   ) { }
 
   ngOnInit() {
-    this.wizardNavigationService.actions.subscribe((action) => {
+    this.wizardNavigationService.actions.subscribe((action:WizardAction) => {
         action.execute(this.wizardStepComponents);
 
         if(this.breadcrumbsService !== null) {
