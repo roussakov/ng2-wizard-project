@@ -1,1 +1,2 @@
-bla : "<h3>Welcome!</h3><h3>We're ready to pay on your behalf to buy the goods and services your business needs.</h3>  <h3>As soon as you confirm a few details, the money will be on its way to <span>{referring_company_name}</span></h3>"
+bla: 
+  > This is not a \"credit inquiry\" and has no impact on your customer's credit
